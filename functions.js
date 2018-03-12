@@ -128,14 +128,13 @@ $(document).ready(function(){
             colorsObj[event.target.id].deactivate();
         })
 
-        $(".colorButton").addEventListener("touchstart", function(event){
+        $(".colorButton").bind("touchstart", function(event){
             clearTimeout(timeOut);
             colorsObj[event.target.id].activate(); //makes sound of relevant color
             pressPattern.push(event.target.id);
             pressCheck(event.target.id);
             pressCount++;
-        })
-        $(".colorButton").addEventListener("touchend", function(event){
+        }).bind("touchend", function(event){
             colorsObj[event.target.id].deactivate();
         })
     }
