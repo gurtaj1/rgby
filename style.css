@@ -1,0 +1,194 @@
+body {
+    background-image: url("http://sciencerocks.info/wp-content/uploads/2016/09/modern-style-light-wood-floor-background-wooden-floor-texture-basketball-floor-texture-light-wooden-background-0.jpg");
+    background-size: cover;
+    user-select: none; /*means nothing may be highlighted*/
+}
+
+.gameUnit {
+    margin-top: 3%;
+    background-color: #404040;
+    width: 460px;
+    height: 460px;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.88), inset 0px 0px 20px 2px rgba(0, 0, 0, 0.2);
+    padding: 13px; /*actually a 10px padding but accomodates for the -3px margin that is needed on the colorButtons so that they remain touching each other (no gaps between them) NB they also have a 10px border which makes everything appear the same 'distance' apart*/
+    position: relative;
+}
+
+.colorButton {
+    height: 220px;
+    width: 220px;
+    display: inline-block;
+    border: 10px solid #404040;
+    margin: -3px;
+}
+
+.tl{
+    background-color: #D00000;
+    border-top-left-radius: 100%;
+}
+
+.tr{
+    background-color: #128900;
+    border-top-right-radius: 100%;
+}
+
+.bl{
+    background-color: #0006A6;
+    border-bottom-left-radius: 100%;
+}
+
+.br{
+    background-color: #9B8600;
+    border-bottom-right-radius: 100%;
+}
+
+.centerUnit {
+    width: 220px;
+    height: 220px;
+    background-color: #E6E6E6;
+    border-radius: 100%;
+    border: 12px solid #404040;
+    position: absolute;
+    top: 120px;
+    left: 120px;
+}
+
+h1 {
+    margin-top:35px;
+    font-family: "alfa slab one", cursive;
+    font-size: 38px;
+}
+
+#TM {
+    font-family: ariel;
+    font-size: 12px;
+    position: relative;
+    top: -22px;
+}
+
+.count {
+    width: 50px;
+    height: 50px;
+    font-size: 13px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.countScreen {
+    width: 50px;
+    height: 40px;
+    border: 3px solid #404040;
+    border-radius: 5px;
+    background-color: #390000;
+}
+
+.countDisplay {
+    font-size: 25px;
+    font-family: 'Orbitron', sans-serif;
+    color: #5B0000;
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    top: -1px;
+}
+
+.start {
+    width: 50px;
+    height: 50px;
+    font-size: 13px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.startButton {
+    width: 25px;
+    height: 25px;
+    border: 3px solid #6C6C6C;
+    border-radius: 100%;
+    background-color: red;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -8px;
+}
+
+.startButton:active {
+    transform: translate(0px, 1px);
+    box-shadow: none;
+}
+
+.strict {
+    width: 50px;
+    height: 50px;
+    font-size: 13px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.strictLight {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #6C6C6C;
+    border-radius: 100%;
+    background-color: #390000;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -14px;
+}
+
+.strictButton {
+    width: 25px;
+    height: 25px;
+    border: 3px solid #6C6C6C;
+    border-radius: 100%;
+    background-color: yellow;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -8px;
+}
+
+.strictButton:active {
+    transform: translate(0px, 1px);
+    box-shadow: none;
+}
+
+.powerControl {
+    width: 95px;
+    height: 21px;
+    display: block;
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.powerControlText {
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    top: -5px;
+}
+
+.switch {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #292929;
+    border-radius: 5px;
+}
+
+#slider {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-color: #00ABFF;
+    border: 2px solid #6C6C6C; 
+    border-radius: 5px;
+}
