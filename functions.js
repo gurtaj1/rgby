@@ -127,6 +127,16 @@ $(document).ready(function(){
         }).mouseleave(function(event){
             colorsObj[event.target.id].deactivate();
         })
+
+        $(".colorButton").on("touchstart", function(event){
+            clearTimeout(timeOut);
+            colorsObj[event.target.id].activate(); //makes sound of relevant color
+            pressPattern.push(event.target.id);
+            pressCheck(event.target.id);
+            pressCount++;
+        }).on("touchend", function(event){
+            colorsObj[event.target.id].deactivate();
+        })
     }
     //all colorButtons share the class name but have unique id which can be retrieved from event.target.id whenever any particular one is clicked, this is how the appropriate active and non active states can be assigned correctly by the above mousedown/mouseup function.
     
