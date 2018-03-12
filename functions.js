@@ -114,36 +114,28 @@ $(document).ready(function(){
         colorsObj[i].deactivate();
     } //stops all color changes and sounds that may be playing 
     }
-    //============================================================================MOUSE CLICK FUNCTIONS============================================================================
+    //============================================================================MOUSE AND TOUCH FUNCTIONS============================================================================
     function allowInput(timeOut) {
-        $(".colorButton").mousedown(function(event){
+        $(".colorButton").on("mousedown touchstart", function(event){
+            event.preventDefault();  //calling preventDefault() on a touchstart or the first touchmove event of a series prevents the corresponding mouse events from firing - see https://developer.mozilla.org/en-US/docs/Web/API/Touch_events#Additional_tips
             clearTimeout(timeOut);
             colorsObj[event.target.id].activate(); //makes sound of relevant color
             pressPattern.push(event.target.id);
             pressCheck(event.target.id);
             pressCount++;
-        }).mouseup(function(event){
-            colorsObj[event.target.id].deactivate(); //stops sound of relevant color
-        }).mouseleave(function(event){
+        }).on("mouseup touchend", function(event){
+            event.preventDefault();
             colorsObj[event.target.id].deactivate();
-        })
-
-        $(".colorButton").bind("touchstart", function(event){
-            clearTimeout(timeOut);
-            colorsObj[event.target.id].activate(); //makes sound of relevant color
-            pressPattern.push(event.target.id);
-            pressCheck(event.target.id);
-            pressCount++;
-        }).bind("touchend", function(event){
+        }).mouseleave(function(event){
             colorsObj[event.target.id].deactivate();
         })
     }
     //all colorButtons share the class name but have unique id which can be retrieved from event.target.id whenever any particular one is clicked, this is how the appropriate active and non active states can be assigned correctly by the above mousedown/mouseup function.
     
     function blockInput() {
-    $(".colorButton").off("mousedown");
+    $(".colorButton").off("mousedown touchstart");
     setTimeout(function(){
-        $(".colorButton").off("mouseup");
+        $(".colorButton").off("mouseup touchend");
         $(".colorButton").off("mouseleave");
         muteAllColors(); //because without this the color will stay illuminated if the user keeps mousedown after the mouseup/mouseleave handlers are removed
     }, 1000);
